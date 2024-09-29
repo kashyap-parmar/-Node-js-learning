@@ -23,6 +23,19 @@ const verifyToken = (token) => {
     });
 };
 
+const sendResponse = ({ data, message, error = false }) => {
+    if (error) {
+        return {
+            error,
+            message
+        }
+    }
+    return {
+        data,
+        message
+    }
+}
+
 // ----------------------------------------------------
 
-module.exports = { signInUser, verifyToken };
+module.exports = { signInUser, verifyToken, sendResponse };
